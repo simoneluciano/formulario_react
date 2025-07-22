@@ -1,0 +1,47 @@
+const express = require('express');
+const cors = require('cors');
+const mysql = require('mysql2');
+
+const app = express();
+const port = 3001;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Conexão com o banco de dados
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'aTlas102030##',
+    database: 'cadastro_usuarios'
+});
+
+db.connect((err) => {
+    if (err) {
+        console.error('Erro ao conectar ao banco de dados:', err);
+        return;
+    }
+    console.log('Conectado ao banco de dados MySQL!');
+});
+
+// Rota de cadastro
+app.post('/cadastro', (req, res) => {
+    const { nome, email, senha, telefone, } = req.body;
+    console.log("Dados recebidos:", nome, email, senha, telefone);
+
+    const query = 'INSERT INTO usuarios (nome, email, senha, telefone) VALUES (?, ?, ?, ?)';
+    db.query(query, [nome, email, senha, telefone], (err, result) => {
+        if (err) {
+            console.error('Erro ao inserir dados:', err);
+            return res.status(500).json({ sucesso: false, erro: err.message });
+        }
+        console.log('Dados inseridos com sucesso, ID:', result.insertId);
+        return res.json({ sucesso: true });
+    });
+});
+
+// Inicia o servidor
+app.listen(port, () => {
+    console.log(`Servidor rodando em http://localhost:${port}`);
+});
