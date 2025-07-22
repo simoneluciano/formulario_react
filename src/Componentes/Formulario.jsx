@@ -57,7 +57,7 @@ function Formulario() {
         console.log("Cadastro:", { nome, email, senha, telefone});
 
         try {
-            const resposta = await fetch('http://localhost:3001/cadastro', {
+            const resposta = await fetch('http://formulario-react-production.up.railway.app/cadastro', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
