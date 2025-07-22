@@ -5,13 +5,11 @@ const mysql = require('mysql2');
 const app = express();
 const port = 3001;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Conexão com o banco de dados
 const db = mysql.createConnection({
-    host: 'localhost',
+    host: 'localhost', 
     user: 'root',
     password: 'aTlas102030##',
     database: 'cadastro_usuarios'
@@ -25,9 +23,8 @@ db.connect((err) => {
     console.log('Conectado ao banco de dados MySQL!');
 });
 
-// Rota de cadastro
 app.post('/cadastro', (req, res) => {
-    const { nome, email, senha, telefone, } = req.body;
+    const { nome, email, senha, telefone } = req.body;
     console.log("Dados recebidos:", nome, email, senha, telefone);
 
     const query = 'INSERT INTO usuarios (nome, email, senha, telefone) VALUES (?, ?, ?, ?)';
@@ -41,7 +38,6 @@ app.post('/cadastro', (req, res) => {
     });
 });
 
-// Inicia o servidor
 app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
+    console.log(`Servidor rodando na porta ${port}`);
 });

@@ -57,7 +57,7 @@ function Formulario() {
         console.log("Cadastro:", { nome, email, senha, telefone});
 
         try {
-            const resposta = await fetch('http://formulario-react-production.up.railway.app/cadastro', {
+            const resposta = await fetch('http://localhost:3001/cadastro', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -80,8 +80,7 @@ function Formulario() {
                 setSucesso('');
             }
         } catch (error) {
-            setErro('Erro ao conectar com o servidor');
-            setSucesso('');
+            
         }
     };
 
