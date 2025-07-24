@@ -1,6 +1,6 @@
 # 📝 Formulário React com Backend Integrado
 
-Formulário completo desenvolvido com React e Vite no frontend, e Node.js com Express no backend. Inclui validações, preenchimento automático de endereço via API ViaCEP e integração com banco de dados MySQL.
+Formulário completo desenvolvido com React e Vite no frontend, e Node.js com Express no backend. Inclui validações e integração com banco de dados MySQL.
 
 ## 💡 Motivação
 
