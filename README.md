@@ -1,12 +1,36 @@
-# React + Vite
+# 📝 Formulário React com Backend Integrado
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Formulário completo desenvolvido com React e Vite no frontend, e Node.js com Express no backend. Inclui validações, preenchimento automático de endereço via API ViaCEP e integração com banco de dados MySQL.
 
-Currently, two official plugins are available:
+## 💡 Motivação
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este projeto simula um sistema de cadastro real com foco em praticar:
+- Manipulação de formulários em React
+- Validações de entrada
+- Consumo de APIs externas
+- Comunicação com backend
+- Persistência de dados em banco
 
-## Expanding the ESLint configuration
+## ⚙️ Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Campos de entrada: Nome, E-mail, Telefone e Senha
+- Envio dos dados para o backend usando `fetch`
+- Backend com Node.js e Express
+- Salvamento dos dados em banco de dados MySQL
+- Deploy do frontend no GitHub Pages
+
+## 🛠️ Tecnologias Utilizadas
+
+### Frontend
+- React
+- Vite
+- JavaScript (ES6+)
+- HTML5 + CSS3
+- Hooks: `useState`, `useEffect`
+- GitHub Pages
+
+### Backend
+- Node.js
+- Express.js
+- Body-parser, CORS
+- MySQL
